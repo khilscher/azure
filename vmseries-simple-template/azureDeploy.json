@@ -181,7 +181,7 @@
         "apiVersion": "2015-06-15",
         "imagePublisher": "paloaltonetworks",
     	"imageSku" : "byol",
-	    "imageOffer" : "vmseries1",
+	"imageOffer" : "vmseries1",
         "fwpublicIPName": "[concat(parameters('vmName'), '-fwMgmtPublicIP')]",
         "nicName": "[concat(parameters('vmName'), '-eth')]",
         "FWPrivateIPAddressUntrust": "[parameters('subnet1StartAddress')]",
@@ -208,7 +208,7 @@
 	},
 	"parameters" : {
 		"location": {
-			"value": "[parameters('location')]"
+			"value": "[resourceGroup().location]"
 		},
 		"storageAccountType": {
 			"value": "[parameters('storageAccountType')]"
@@ -225,7 +225,7 @@
         "apiVersion": "[variables('apiVersion')]",
         "type": "Microsoft.Network/publicIPAddresses",
         "name": "[variables('fwpublicIPName')]",
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "properties": {
             "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
             "dnsSettings": {
@@ -236,7 +236,7 @@
         "apiVersion": "[variables('apiVersion')]",
         "type": "Microsoft.Network/networkSecurityGroups",
         "name": "[concat(parameters('vmName'), '-DefaultNSG')]",
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "properties": {
             "securityRules": [{
                 "name": "Allow-Outside-From-IP",
@@ -283,7 +283,7 @@
         "apiVersion": "[variables('apiVersion')]",
         "type": "Microsoft.Network/virtualNetworks",
         "name": "[parameters('virtualNetworkName')]",
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "dependsOn": [
             "[concat('Microsoft.Network/networkSecurityGroups/', variables('nsgname-mgmt'))]"
         ],
@@ -317,7 +317,7 @@
         "apiVersion": "[variables('apiVersion')]",
         "type": "Microsoft.Network/networkInterfaces",
         "name": "[concat(variables('nicName'), '0')]",
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "dependsOn": [
             "[concat('Microsoft.Network/publicIPAddresses/', variables('fwpublicIPName'))]",
             "[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
@@ -343,7 +343,7 @@
         "apiVersion": "[variables('apiVersion')]",
         "type": "Microsoft.Network/networkInterfaces",
         "name": "[concat(variables('nicName'), '1')]",
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "dependsOn": [
             "[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
         ],
@@ -367,7 +367,7 @@
         "apiVersion": "[variables('apiVersion')]",
         "type": "Microsoft.Network/networkInterfaces",
         "name": "[concat(variables('nicName'), '2')]",
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "dependsOn": [
             "[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
         ],
@@ -406,7 +406,7 @@
         },
         "parameters": {
           "location": {
-            "value": "[parameters('location')]"
+            "value": "[resourceGroup().location]"
           },
           "vmName": {
             "value": "[parameters('vmName')]"
