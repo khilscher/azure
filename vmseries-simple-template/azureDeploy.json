@@ -363,11 +363,6 @@
                 "properties": {
                     "addressPrefix": "[parameters('subnet3Prefix')]"
                 }
-            },{
-                "name": "[parameters('subnet4Name')]",
-                "properties": {
-                    "addressPrefix": "[parameters('subnet4Prefix')]"
-                }
             }]
         }
     }, {
