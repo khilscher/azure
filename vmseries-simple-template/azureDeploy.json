@@ -229,8 +229,10 @@
 	"imageOffer" : "vmseries1",
         "fwpublicIPName": "[concat(parameters('vmName'), '-fwMgmtPublicIP')]",
         "nicName": "[concat(parameters('vmName'), '-eth')]",
-        "FWPrivateIPAddressUntrust": "[parameters('subnet1StartAddress')]",
-        "FWPrivateIPAddressTrust": "[parameters('subnet2StartAddress')]",
+        "FWPrivateIPAddress1": "[parameters('subnet1StartAddress')]",
+        "FWPrivateIPAddress2": "[parameters('subnet2StartAddress')]",
+	"FWPrivateIPAddress3": "[parameters('subnet3StartAddress')]",
+        "FWPrivateIPAddress4": "[parameters('subnet4StartAddress')]",
         "publicIPAddressType": "Dynamic",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
         "nsgname-mgmt": "[concat(parameters('vmName'), '-DefaultNSG')]",
@@ -408,7 +410,7 @@
                 "name": "[concat('ipconfig', '1')]",
                 "properties": {
                     "privateIPAllocationMethod": "Static",
-                    "privateIPAddress": "[variables('FWPrivateIPAddressUntrust')]",
+                    "privateIPAddress": "[variables('FWPrivateIPAddress1')]",
                     "subnet": {
                         "id": "[variables(concat('subnet','1','Ref'))]"
                     }
@@ -432,7 +434,7 @@
                 "name": "[concat('ipconfig', '2')]",
                 "properties": {
                     "privateIPAllocationMethod": "Static",
-                    "privateIPAddress": "[variables('FWPrivateIPAddressTrust')]",
+                    "privateIPAddress": "[variables('FWPrivateIPAddress2]')]",
                     "subnet": {
                         "id": "[variables(concat('subnet','2','Ref'))]"
                     }
@@ -456,7 +458,7 @@
                 "name": "[concat('ipconfig', '3')]",
                 "properties": {
                     "privateIPAllocationMethod": "Static",
-                    "privateIPAddress": "[variables('FWPrivateIPAddressTrust')]",
+                    "privateIPAddress": "[variables('FWPrivateIPAddress3')]",
                     "subnet": {
                         "id": "[variables(concat('subnet','3','Ref'))]"
                     }
@@ -480,7 +482,7 @@
                 "name": "[concat('ipconfig', '4')]",
                 "properties": {
                     "privateIPAllocationMethod": "Static",
-                    "privateIPAddress": "[variables('FWPrivateIPAddressTrust')]",
+                    "privateIPAddress": "[variables('FWPrivateIPAddress4')]",
                     "subnet": {
                         "id": "[variables(concat('subnet','4','Ref'))]"
                     }
