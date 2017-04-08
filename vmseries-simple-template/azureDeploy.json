@@ -181,7 +181,7 @@
     },
     "subnet4Prefix": {
       "type": "string",
-      "defaultValue": "10.0.8.0/24",
+      "defaultValue": "10.0.10.0/24",
       "metadata": {
         "description": ""
       }
@@ -216,7 +216,7 @@
     },
     "subnet4StartAddress": {
       "type": "string",
-      "defaultValue": "10.0.8.4",
+      "defaultValue": "10.0.10.4",
       "metadata": {
         "description": "Subnet start address"
       }
