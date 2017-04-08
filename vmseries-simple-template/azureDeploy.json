@@ -434,7 +434,7 @@
                 "name": "[concat('ipconfig', '2')]",
                 "properties": {
                     "privateIPAllocationMethod": "Static",
-                    "privateIPAddress": "[variables('FWPrivateIPAddress2]')]",
+                    "privateIPAddress": "[variables('FWPrivateIPAddress2')]",
                     "subnet": {
                         "id": "[variables(concat('subnet','2','Ref'))]"
                     }
