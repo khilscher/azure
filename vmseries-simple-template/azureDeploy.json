@@ -143,9 +143,9 @@
     },
     "subnet4Name": {
       "type": "string",
-      "defaultValue": "Internal",
+      "defaultValue": "Inside",
       "metadata": {
-        "description": "Subnet for Internal"
+        "description": "Subnet for Inside"
       }
     },	    
     "subnet0Prefix": {
