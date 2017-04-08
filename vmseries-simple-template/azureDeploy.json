@@ -529,6 +529,7 @@
           "imagePublisher": {
             "value": "[variables('imagePublisher')]"
           },
+	  "imageVersion": "7.1.0",
           "nicName": {
             "value": "[variables('nicName')]"
           },
