@@ -6,7 +6,8 @@
             "type": "string",
             "metadata": {
                 "description": "Globally unique lowercase name of your storage account"
-            }
+            },
+	    "defaultValue":"paloalto"
         },
         "storageAccountType": {
             "type": "string",
@@ -37,13 +38,15 @@
             "type": "string",
             "metadata": {
                 "description": "Globally unique DNS name to access management interface of VM-Series firewall"
-            }
+            },
+	    "defaultValue":"khpalo1"
         },
         "vmName": {
             "type": "string",
             "metadata": {
                 "description": "Name of VM-Series VM in the Azure portal"
-            }
+            },
+	    "defaultValue":"khpalo1"
         },
         "adminUserName": {
             "type": "string",
